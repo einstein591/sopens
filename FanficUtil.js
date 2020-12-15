@@ -1,6 +1,7 @@
-// FanficUtil
+// Name:    FanficUtil.js
+// Author:  sopens
 
-function Person(url, chapter) {
+function Fanfic(url, chapter) {
   this.baseUrl = url.split("/").slice(0, 3).join("/");
   this.storyId = url.split("/")[4];
   this.chapter = chapter;
