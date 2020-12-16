@@ -6,7 +6,8 @@
 // @author       sopens
 // ==/UserScript==
 
-function FanficUtil() {
+function FanficUtil(url, chapter) {
+  this.href = null;
   this.url = null;
   this.chapter = null;
   this.baseUrl = this.url.split("/").slice(0, 3).join("/");
