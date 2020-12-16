@@ -56,4 +56,4 @@ var FanficUtil = {
   getNextChapterReviewsUrl: function() {
     return [this.getStoryReviewUrl(), this.chapter + 1, "1"].join("/");
   };
-}
+};
