@@ -11,6 +11,11 @@ var FanficUtil = {
   baseReviewUrl: [this.baseUrl, "r"].join("/"),
   
   // Methods ...
+  
+  initialize: function(url, chapter) {
+    this.url = url;
+    this.chapter = chapter;
+  },
 
   getPrevChapterUrl: function() {
     if (this.storyName == null) {
