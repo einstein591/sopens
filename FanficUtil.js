@@ -1,5 +1,10 @@
-// Name:    FanficUtil.js
-// Author:  sopens
+// ==UserScript==
+// @name         FanficUtil
+// @namespace    https://greasyfork.org/en/users/705154-ben-jackson
+// @version      2.0
+// @description  FanficUtil
+// @author       sopens
+// ==/UserScript==
 
 var FanficUtil = {
   url: null,
