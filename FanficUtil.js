@@ -6,59 +6,59 @@
 // @author       sopens
 // ==/UserScript==
 
-var FanficUtil = {
-  url: null,
-  chapter: null,
-  baseUrl: this.url.split("/").slice(0, 3).join("/"),
-  storyId: this.url.split("/")[4],
-  storyName: this.url.split("/")[6],
-  baseStoryUrl: [this.baseUrl, "s"].join("/"),
-  baseReviewUrl: [this.baseUrl, "r"].join("/"),
-  
+function FanficUtil() {
+  this.url = null;
+  this.chapter = null;
+  this.baseUrl = this.url.split("/").slice(0, 3).join("/");
+  this.storyId = this.url.split("/")[4];
+  this.storyName = this.url.split("/")[6];
+  this.baseStoryUrl = [this.baseUrl, "s"].join("/");
+  this.baseReviewUrl = [this.baseUrl, "r"].join("/");
+
   // Methods ...
-  
-  initialize: function(url, chapter) {
+
+  this.initialize = function(url, chapter) {
     this.url = url;
     this.chapter = chapter;
-  },
+  };
 
-  getPrevChapterUrl: function() {
+  this.getPrevChapterUrl = function() {
     if (this.storyName == null) {
-     return [this.baseStoryUrl, this.storyId, this.chapter - 1].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter - 1].join("/");
     } else {
-     return [this.baseStoryUrl, this.storyId, this.chapter - 1, this.storyName].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter - 1, this.storyName].join("/");
     }
-  },
-  
-  getCurrentChapterUrl: function() {
+  };
+
+  this.getCurrentChapterUrl = function() {
     if (this.storyName == null) {
-     return [this.baseStoryUrl, this.storyId, this.chapter].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter].join("/");
     } else {
-     return [this.baseStoryUrl, this.storyId, this.chapter, this.storyName].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter, this.storyName].join("/");
     }
-  },
-  
-  getNextChapterUrl: function() {
+  };
+
+  this.getNextChapterUrl = function() {
     if (this.storyName == null) {
-     return [this.baseStoryUrl, this.storyId, this.chapter + 1].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter + 1].join("/");
     } else {
-     return [this.baseStoryUrl, this.storyId, this.chapter + 1, this.storyName].join("/");
+      return [this.baseStoryUrl, this.storyId, this.chapter + 1, this.storyName].join("/");
     }
-  },
-  
-  getStoryReviewUrl: function() {
+  };
+
+  this.getStoryReviewUrl = function() {
     return [this.baseUrl, "r", this.storyId].join("/");
-  },
-  
-  getPrevChapterReviewsUrl: function() {
+  };
+
+  this.getPrevChapterReviewsUrl = function() {
     return [this.getStoryReviewUrl(), this.chapter - 1, "1"].join("/");
-  },
-  
-  getCurrentChapterReviewsUrl: function() {
+  };
+
+  this.getCurrentChapterReviewsUrl = function() {
     return [this.getStoryReviewUrl(), this.chapter, "1"].join("/");
-  },
-  
-  getNextChapterReviewsUrl: function() {
+  };
+
+  this.getNextChapterReviewsUrl = function() {
     return [this.getStoryReviewUrl(), this.chapter + 1, "1"].join("/");
   };
-};
+}
